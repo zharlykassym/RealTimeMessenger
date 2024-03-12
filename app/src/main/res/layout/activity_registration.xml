@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/rectangle_808"
+    tools:context=".view.RegistrationActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewAppName"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_thin"
+
+                android:text="@string/registration"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="190dp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rectangle_3"
+
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+
+                android:paddingStart="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80FFFFFF"
+
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rectangle_3"
+
+                android:hint="@string/password"
+                android:inputType="textPassword"
+
+                android:paddingStart="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80FFFFFF"
+
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextName" />
+
+            <EditText
+                android:id="@+id/editTextTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rectangle_3"
+
+                android:hint="@string/name"
+                android:inputType="textCapWords"
+
+                android:paddingStart="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80FFFFFF"
+
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextSurname" />
+
+            <EditText
+                android:id="@+id/editTextTextSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rectangle_3"
+
+                android:hint="@string/surname"
+                android:inputType="textCapWords"
+
+                android:paddingStart="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80FFFFFF"
+
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextAge" />
+
+            <EditText
+                android:id="@+id/editTextTextAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="36dp"
+
+                android:background="@drawable/rectangle_3"
+
+                android:ems="10"
+                android:hint="@string/age"
+                android:inputType="number"
+
+                android:paddingStart="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#80FFFFFF"
+
+                app:layout_constraintBottom_toTopOf="@+id/buttonLogin" />
+
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+
+
+                android:background="@drawable/gradient_blue"
+                android:fontFamily="@font/poppins_medium"
+
+                android:gravity="center_horizontal|center_vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="6dp"
+                android:text="@string/registration"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtons" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="48dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <Button
+                    android:id="@+id/buttonForgotPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="28dp"
+                    android:text="@string/forgot_password"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/buttonSignUp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:paddingEnd="28dp"
+                    android:text="@string/login"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+</ScrollView>

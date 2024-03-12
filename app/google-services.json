@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "511925934845",
+    "project_id": "realtime-messenger-15223",
+    "storage_bucket": "realtime-messenger-15223.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511925934845:android:1e142786ba8a9d25d47c94",
+        "android_client_info": {
+          "package_name": "com.tamerlan.realtimemessenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhxbrDIuhb6ObqLDbG07PLhUc0oagt7C0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
