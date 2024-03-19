@@ -20,5 +20,7 @@
     <string name="invalid_password">Пароль должен быть >5 символов</string>
     <string name="login_failed">Не удалось войти</string>
     <string name="register">Зарегистрироваться</string>
+    <string name="reset_password">Сбросить пароль</string>
+    <string name="cancel">Отмена</string>
 
 </resources>

@@ -135,7 +135,7 @@
 
 
             <Button
-                android:id="@+id/buttonRegister"
+                android:id="@+id/buttonSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -168,23 +168,24 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <Button
-                    android:id="@+id/buttonForgotPassword"
+                    android:id="@+id/buttonCancel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:paddingStart="28dp"
-                    android:text="@string/forgot_password"
-                    android:textAlignment="textStart"
+
+                    android:text="@string/cancel"
+                    android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/buttonSignUp"
+                    android:id="@+id/buttonLogin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:background="@android:color/transparent"
                     android:paddingEnd="28dp"
                     android:text="@string/login"

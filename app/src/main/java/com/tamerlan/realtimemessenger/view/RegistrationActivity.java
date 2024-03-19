@@ -15,9 +15,12 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private EditText editTextTextEmailAddress;
     private EditText editTextTextPassword;
+    private EditText editTextTextName;
+    private EditText editTextTextSurname;
+    private EditText editTextTextAge;
+    private Button buttonLogin;
+    private Button buttonCancel;
     private Button buttonSignUp;
-    private Button buttonForgotPassword;
-    private Button buttonRegister;
     private String email;
     private String password;
 
@@ -27,12 +30,35 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         initView();
 
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                  getTrimmedValue(editTextTextEmailAddress);
+                  getTrimmedValue(editTextTextPassword);
+                  getTrimmedValue(editTextTextName);
+                  getTrimmedValue(editTextTextSurname);
+                  int age = Integer.parseInt(getTrimmedValue(editTextTextAge));
+                // sign up .createdEmailAddressAndPassword(email, password);
+            }
+        });
+
+//        buttonForgotPassword.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = ResetPasswordActivity.newIntent(RegistrationActivity.this);
+//                startActivity(intent);
+//            }
+//        });
+    }
+
+    private String getTrimmedValue(EditText editText){
+        return editText.getText().toString().trim();
     }
 
     public static Intent newIntent(Context context) {
@@ -42,8 +68,11 @@ public class RegistrationActivity extends AppCompatActivity {
     private void initView() {
         editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonCancel = findViewById(R.id.buttonCancel);
         buttonSignUp = findViewById(R.id.buttonSignUp);
-        buttonForgotPassword = findViewById(R.id.buttonForgotPassword);
-        buttonRegister = findViewById(R.id.buttonRegister);
+        editTextTextName = findViewById(R.id.editTextTextName);
+        editTextTextSurname = findViewById(R.id.editTextTextSurname);
+        editTextTextAge = findViewById(R.id.editTextTextAge);
     }
 }

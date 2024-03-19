@@ -110,7 +110,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonSignUp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

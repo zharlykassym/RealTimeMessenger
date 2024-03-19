@@ -9,33 +9,40 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class LoginViewModel extends AndroidViewModel {
+public class LoginViewModel extends ViewModel {
     private static final String TAG = "LoginViewModel";
-
-
-    MutableLiveData<Boolean> isRegistration = new MutableLiveData<>(false);
-
-    public LiveData<Boolean> getIsRegistration() {
-        return isRegistration;
-    }
-
+    public MutableLiveData<String> error = new MutableLiveData<>();
+    public MutableLiveData<FirebaseUser> user = new MutableLiveData<>();
 
     private FirebaseAuth mAuth;
 
-    public LoginViewModel(@NonNull Application application) {
-        super(application);
+    public LoginViewModel() {
         mAuth = FirebaseAuth.getInstance();
+        mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser()!=null){
+                    user.setValue(firebaseAuth.getCurrentUser());
+                }
+            }
+        });
     }
 
 
-    public void switchLogin2Register() {
-        isRegistration.setValue(!isRegistration.getValue());
+    public LiveData<String> getError() {
+        return error;
+    }
+
+    public MutableLiveData<FirebaseUser> getUser() {
+        return user;
     }
 
     public void signInWithEmailAddressAndPassword(String email, String password) {
@@ -44,13 +51,12 @@ public class LoginViewModel extends AndroidViewModel {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Log.d(TAG, "Success");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d(TAG, e.getMessage());
+                        error.setValue(e.getMessage());
                     }
                 });
     }
