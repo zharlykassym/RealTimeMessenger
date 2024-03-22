@@ -5,14 +5,17 @@ public class User {
     private String name;
     private String lastMame;
     private int age;
-    private boolean isOnline;
+    private boolean online;
 
-    public User(String id, String name, String lastMame, int age, boolean isOnline) {
+    public User() {
+    }
+
+    public User(String id, String name, String lastMame, int age, boolean online) {
         this.id = id;
         this.name = name;
         this.lastMame = lastMame;
         this.age = age;
-        this.isOnline = isOnline;
+        this.online = online;
     }
 
     public String getId() {
@@ -31,8 +34,19 @@ public class User {
         return age;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastMame='" + lastMame + '\'' +
+                ", age=" + age +
+                ", online=" + online +
+                '}';
+    }
+
     public boolean isOnline() {
-        return isOnline;
+        return online;
     }
 
 

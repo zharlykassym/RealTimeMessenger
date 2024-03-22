@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder>{
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder> {
     private List<User> users = new ArrayList<>();
     private OnUserClickListener onUserClickListener;
 
@@ -39,17 +39,18 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         String userInfo = String.format("%s %s", user.getName(), user.getLastMame());
         holder.textViewUserInfo.setText(userInfo);
         int bgResId;
-        if (user.isOnline()){
+        if (user.isOnline()) {
             bgResId = R.drawable.circle_green;
         } else {
-            bgResId = android.R.color.transparent;
+//            bgResId = android.R.color.transparent;
+            bgResId = R.drawable.circle_red;
         }
         Drawable background = ContextCompat.getDrawable(holder.itemView.getContext(), bgResId);
         holder.onlineStatus.setBackground(background);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (onUserClickListener != null){
+                if (onUserClickListener != null) {
                     onUserClickListener.onUserClick(user);
                 }
             }
@@ -61,7 +62,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         return users.size();
     }
 
-    interface OnUserClickListener {
+    public interface OnUserClickListener {
         void onUserClick(User user);
 
     }
@@ -69,6 +70,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
     static class UserViewHolder extends RecyclerView.ViewHolder {
         private final TextView textViewUserInfo;
         private final View onlineStatus;
+
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewUserInfo = itemView.findViewById(R.id.textViewUserInfo);
