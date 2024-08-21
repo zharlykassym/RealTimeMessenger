@@ -1,5 +1,4 @@
 # RealTimeMessenger
- # Messenger
 
 ## Описание проекта
 
